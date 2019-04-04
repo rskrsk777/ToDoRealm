@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  ToDoRealm
-//
-//  Created by ryosuke kubo on 2019/04/04.
-//  Copyright © 2019 ryosuke kubo. All rights reserved.
-//
 
 import UIKit
 
@@ -15,7 +8,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let viewController = ViewController()
+        let navController = UINavigationController(rootViewController: viewController)
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
         return true
     }
 
