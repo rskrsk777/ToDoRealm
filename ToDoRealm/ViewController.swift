@@ -78,16 +78,11 @@ extension ViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
         cell.detailTextLabel?.text = (items?[indexPath.row].isCompeleted)! ? "Completed" : "Not Compeleted"
-        cell.detailTextLabel?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toggleComleted(_:))))
         cell.textLabel?.text = items?[indexPath.row].text
         cell.textLabel?.attributedText = NSAttributedString(string: cell.textLabel!.text!, attributes: (items?[indexPath.row].isCompeleted)! ? [NSAttributedString.Key.strikethroughStyle: true] : [:])
         return cell
     }
-    
-    @objc func toggleComleted(_ indexPath: IndexPath) {
-        items?[indexPath.row].isCompeleted = !((items?[indexPath.row].isCompeleted)!)
-        
-    }
+
 }
 
 extension ViewController: UITableViewDelegate {
